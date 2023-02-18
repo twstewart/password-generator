@@ -15,15 +15,39 @@ const funcs = {
 };
 
 generateBtn.addEventListener("click", handleGenerateBtnClick);
+clipboardBtn.addEventListener("click", handleClipboardBtnClick);
 
 function handleGenerateBtnClick(_e) {
   const length = Number(lengthEl.value);
+
+  if (length < 4 || length > 20) {
+    alert("Please pick a between 4 and 20!");
+    return;
+  }
+
   const lower = lowerEl.checked;
   const upper = upperEl.checked;
   const numbers = numbersEl.checked;
   const symbols = symbolsEl.checked;
 
   resultEl.textContent = passwordGenerator(length, lower, upper, numbers, symbols);
+}
+
+function handleClipboardBtnClick(_e) {
+  const password = resultEl.textContent;
+
+  if (!password) {
+    return;
+  }
+
+  navigator.clipboard
+    .writeText(password)
+    .then(() => {
+      alert("Copied password!");
+    })
+    .catch((err) => {
+      alert("Oops something went wrong!");
+    });
 }
 
 function passwordGenerator(length, lower, upper, numbers, symbols) {

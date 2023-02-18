@@ -9,9 +9,9 @@
   </head>
   <body class="min-h-screen flex flex-col justify-center items-center bg-slate-700 text-gray-50 font-body">
     <div class="container">
-      <main class="max-w-md mx-auto px-6 py-8 border-2 rounded bg-slate-900 shadow-lg">
+      <main class="max-w-md mx-auto px-6 py-8 border-2 rounded-lg bg-slate-900 shadow-lg">
         <h1 class="font-display text-3xl text-center mb-6">Password Generator</h1>
-        <section class="relative flex justify-start items-center text-md tracking-wide rounded mb-10 p-3 bg-gray-700">
+        <section class="relative flex justify-start items-center text-md tracking-widest rounded mb-10 p-3 bg-gray-700">
           <span id="result" class="break-all mr-auto"></span>
           <button id="clipboard" class="btn p-2 bg-green-500 hover:bg-green-600">
             <ion-icon name="clipboard-outline" class="text-xl"></ion-icon>
@@ -28,7 +28,7 @@
           <fieldset>
             <label class="setting"
               >Include uppercase letters
-              <input type="checkbox" checked />
+              <input type="checkbox" id="uppercase" checked />
               <span class="checkmark"></span>
             </label>
           </fieldset>
