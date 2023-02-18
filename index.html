@@ -7,40 +7,57 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Password Generator</title>
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col justify-center items-center bg-slate-700 text-gray-50 font-body">
     <div class="container">
-      <main class="max-w-sm mx-auto p-8">
-        <h1>Password Generator</h1>
-
-        <section>
-          <span id="result"></span>
-          <button id="clipboard"><ion-icon name="copy-outline"></ion-icon></button>
+      <main class="max-w-md mx-auto px-6 py-8 border-2 rounded bg-slate-900 shadow-lg">
+        <h1 class="font-display text-3xl text-center mb-6">Password Generator</h1>
+        <section class="relative flex justify-start items-center text-md tracking-wide rounded mb-10 p-3 bg-gray-700">
+          <span id="result" class="break-all mr-auto"></span>
+          <button id="clipboard" class="btn p-2 bg-green-500 hover:bg-green-600">
+            <ion-icon name="clipboard-outline" class="text-xl"></ion-icon>
+          </button>
         </section>
 
-        <section>
-          <div>
-            <label for="length">Password Length</label>
-            <input type="number" id="length" min="8" max="20" value="20" />
-          </div>
-          <div>
-            <label for="uppercase">Include uppercase letters</label>
-            <input type="checkbox" id="uppercase" checked />
-          </div>
-          <div>
-            <label for="lowercase">Include lowercase letters</label>
-            <input type="checkbox" id="lowercase" checked />
-          </div>
-          <div>
-            <label for="numbers">Include numbers</label>
-            <input type="checkbox" id="numbers" checked />
-          </div>
-          <div>
-            <label for="symbols">Include symbols</label>
-            <input type="checkbox" id="symbols" checked />
-          </div>
+        <section class="flex flex-col gap-y-4">
+          <fieldset>
+            <label class="flex justify-between text-md cursor-pointer"
+              >Password length
+              <input type="number" id="length" min="4" max="20" value="20" class="text-black text-sm p-1 rounded" />
+            </label>
+          </fieldset>
+          <fieldset>
+            <label class="setting"
+              >Include uppercase letters
+              <input type="checkbox" checked />
+              <span class="checkmark"></span>
+            </label>
+          </fieldset>
+          <fieldset>
+            <label class="setting"
+              >Include lowercase letters
+              <input type="checkbox" id="lowercase" checked />
+              <span class="checkmark"></span>
+            </label>
+          </fieldset>
+          <fieldset>
+            <label class="setting"
+              >Include numbers
+              <input type="checkbox" id="numbers" checked />
+              <span class="checkmark"></span>
+            </label>
+          </fieldset>
+          <fieldset>
+            <label class="setting"
+              >Include symbols
+              <input type="checkbox" id="symbols" checked />
+              <span class="checkmark"></span>
+            </label>
+          </fieldset>
         </section>
-        <div>
-          <button type="button" id="generate">Generate Password</button>
+        <div class="mt-12 text-center">
+          <button type="button" id="generate" class="btn w-3/4 bg-green-500 hover:bg-green-600">
+            Generate Password
+          </button>
         </div>
       </main>
     </div>

@@ -41,3 +41,56 @@
   -ms-transition: none !important;
   -o-transition: none !important;
 }
+
+.setting {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.setting input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.setting:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.setting input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.setting input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.setting .checkmark:after {
+  left: 10px;
+  top: 6px;
+  width: 5px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
